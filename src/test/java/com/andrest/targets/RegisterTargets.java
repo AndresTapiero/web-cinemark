@@ -4,12 +4,8 @@ import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
 public class RegisterTargets {
-
-
-
     public static Target REGISTER_BUTTON = Target.the("Register Button").located(By.xpath("(//button[@title='CREAR CUENTA'])[1]"));
     public static Target NAME_INPUT = Target.the("Name input").located(By.xpath("//*[@id=\"register_FirstName\"]"));
-
     public static Target LAST_NAME_INPUT = Target.the("Name input").located(By.xpath("//*[@id=\"register_LastName\"]"));
     public static Target GENDER_INPUT = Target.the("Gender input").located(By.xpath("//*[@id=\"register_Gender\"]/div/div"));
     public static Target GENDER_MEN_INPUT = Target.the("Gender men input").located(By.xpath("//li[normalize-space()='Masculino']"));
