@@ -26,12 +26,14 @@ public class PaymentForm implements Task {
         actor.attemptsTo(
                 WaitUntil.the(ADD_CREDIT_CARD, isVisible()).forNoMoreThan(30).seconds(),
                 Click.on(ADD_CREDIT_CARD),
-
+                Click.on(CARD_NUMBER_INPUT),
                 Enter.theValue(CARD_NUMBER.getValue()).into(CARD_NUMBER_INPUT),
+                Click.on(CARD_NAME_INPUT),
                 Enter.theValue(CARD_NAME.getValue()).into(CARD_NAME_INPUT),
 
                 //Año
                 Click.on(CARD_EXPIRATION_INPUT),
+                WaitUntil.the(SELECT_YEAR, isVisible()).forNoMoreThan(10).seconds(),
                 Click.on(SELECT_YEAR),
                 Click.on(YEAR),
                 Click.on(MONTH),
@@ -46,7 +48,7 @@ public class PaymentForm implements Task {
         );
 
         actor.attemptsTo(
-                WaitUntil.the(TITLE_SURE_BUY, isVisible()).forNoMoreThan(10).seconds(),
+                WaitUntil.the(TITLE_SURE_BUY, isVisible()).forNoMoreThan(20).seconds(),
                 Click.on(ACCEPT_BUTTON),
                 WaitUntil.the(WAITING, isVisible())
         );

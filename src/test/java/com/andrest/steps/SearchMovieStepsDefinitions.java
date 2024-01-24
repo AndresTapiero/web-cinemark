@@ -8,9 +8,12 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static com.andrest.targets.BillboardTargets.*;
+import static com.andrest.targets.PaymentTargets.ADD_CREDIT_CARD;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 
 public class SearchMovieStepsDefinitions {
@@ -55,6 +58,7 @@ public class SearchMovieStepsDefinitions {
     @Then("can see the billboard view")
     public void seeScreen() {
         theActorInTheSpotlight().attemptsTo(
+                WaitUntil.the(ADD_CREDIT_CARD, isVisible()).forNoMoreThan(30).seconds()
                 //WaitUntil.the(BILLBOARD_TITLE, isVisible())
         );
     }
