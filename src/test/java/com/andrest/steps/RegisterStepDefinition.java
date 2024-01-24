@@ -1,5 +1,6 @@
 package com.andrest.steps;
 
+import com.andrest.tasks.RegisterForm;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -9,10 +10,9 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
+import static com.andrest.targets.AlertTargets.*;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
-import static com.andrest.targets.AlertTargets.BILLBOARD_TITLE;
-import static com.andrest.targets.AlertTargets.CLOSE_REDEBAN_BUTTON;
 
 public class RegisterStepDefinition {
 
@@ -20,7 +20,6 @@ public class RegisterStepDefinition {
     public void searchMovie(Actor actor) {
         actor.wasAbleTo(NavigateTo.theSearchHomePage());
         closeBannerView(actor);
-
     }
 
 
@@ -37,27 +36,22 @@ public class RegisterStepDefinition {
 
     @When("create a new user")
     public void createNewUser() {
-        selectProfile();
-        createAccount();
+        createNewAccount();
     }
 
-    @Step
-    private void selectProfile() {
 
-
-    }
 
     @Step("create account")
-    private void createAccount(){
+    private void createNewAccount(){
         theActorInTheSpotlight().attemptsTo(
-
+                RegisterForm.fill()
         );
     }
 
     @Then("see the billboard view")
     public void seeScreen() {
         theActorInTheSpotlight().attemptsTo(
-
+                WaitUntil.the(BILLBOARD_TITLE, isVisible())
         );
     }
 }
