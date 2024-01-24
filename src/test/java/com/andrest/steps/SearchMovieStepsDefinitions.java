@@ -1,6 +1,8 @@
 package com.andrest.steps;
 
 import com.andrest.tasks.LoginForm;
+import com.andrest.tasks.PaymentForm;
+import com.andrest.tasks.SelectComb;
 import com.andrest.tasks.SelectMovie;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -39,14 +41,14 @@ public class SearchMovieStepsDefinitions {
     @And("select a comb")
     public void selectComb() {
         theActorInTheSpotlight().attemptsTo(
-                SelectMovie.selectFirst()
+                SelectComb.selectMyComb()
         );
     }
 
     @And("add the payment method")
     public void addPaymentMethod() {
         theActorInTheSpotlight().attemptsTo(
-
+                PaymentForm.fill()
         );
     }
 

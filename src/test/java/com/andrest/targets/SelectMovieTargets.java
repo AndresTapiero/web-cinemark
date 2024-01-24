@@ -7,7 +7,7 @@ public class SelectMovieTargets {
 
     public static Target FIRST_MOVIE = Target.the("First movie").located(By.xpath("(//div[@class='jsx-1273177034 info-movie'])[1]"));
     public static Target ORIGINAL_TITLE = Target.the("Original title").located(By.xpath("(//h4[normalize-space()='título original'])[1]"));
-    public static Target SELECT_HOUR = Target.the("Select hour").located(By.xpath("//div[normalize-space()='20:30']"));
+    public static Target SELECT_HOUR = Target.the("Select hour").located(By.xpath("//div[normalize-space()='17:35']"));
     public static Target HOUR_SELECTED = Target.the("Hour Selected").located(By.xpath("//small[@class='jsx-2125408045 d-block text--sentence-case text--schedule']"));
     public static Target CONFIRM_BUTTON = Target.the("Confirm button").located(By.xpath("(//button[@title='CONFIRMAR'])[1]"));
 

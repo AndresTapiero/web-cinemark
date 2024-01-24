@@ -12,7 +12,7 @@ public enum Constants {
     CARD_NAME("APPROVED"),
     CARD_NUMBER("4093551018099251"),
     EXPIRATION_DATE("0726"),
-    CVV("777");
+    CARD_CVV("777");
 
     private String value;
 
