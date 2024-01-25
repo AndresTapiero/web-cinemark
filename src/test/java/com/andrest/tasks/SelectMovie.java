@@ -4,8 +4,6 @@ import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.conditions.Check;
-import net.serenitybdd.screenplay.questions.WebElementQuestion;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static com.andrest.targets.AlertTargets.*;
@@ -49,10 +47,8 @@ public class SelectMovie implements Task {
         );
 
         actor.attemptsTo(
-                Check.whether(WebElementQuestion.the(CONFIRM_MODAL_VIEW).answeredBy(actor).isVisible()).andIfSo(
                         WaitUntil.the(CONFIRM_MODAL_VIEW, isVisible()).forNoMoreThan(10).seconds(),
                         Click.on(CONFIRM_MODAL_BUTTON)
-                )
         );
     }
 }
