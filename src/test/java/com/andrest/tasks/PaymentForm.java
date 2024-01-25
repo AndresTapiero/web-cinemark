@@ -48,7 +48,7 @@ public class PaymentForm implements Task {
         );
 
         actor.attemptsTo(
-                WaitUntil.the(TITLE_SURE_BUY, isVisible()).forNoMoreThan(20).seconds(),
+                WaitUntil.the(TITLE_SURE_BUY, isVisible()).forNoMoreThan(30).seconds(),
                 Click.on(ACCEPT_BUTTON),
                 WaitUntil.the(WAITING, isVisible())
         );

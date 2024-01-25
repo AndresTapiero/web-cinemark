@@ -11,7 +11,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static com.andrest.targets.BillboardTargets.*;
-import static com.andrest.targets.PaymentTargets.ADD_CREDIT_CARD;
+import static com.andrest.targets.PaymentTargets.*;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
@@ -58,8 +58,9 @@ public class SearchMovieStepsDefinitions {
     @Then("can see the billboard view")
     public void seeScreen() {
         theActorInTheSpotlight().attemptsTo(
-                WaitUntil.the(ADD_CREDIT_CARD, isVisible()).forNoMoreThan(30).seconds()
-                //WaitUntil.the(BILLBOARD_TITLE, isVisible())
+                WaitUntil.the(CODE_CONFIRMATION, isVisible()).forNoMoreThan(90).seconds(),
+                Click.on(FINISH_BUY),
+                WaitUntil.the(BILLBOARD_BOGOTA_TITLE, isVisible()).forNoMoreThan(15).seconds()
         );
     }
 }

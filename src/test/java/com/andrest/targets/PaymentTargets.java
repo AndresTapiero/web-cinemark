@@ -20,4 +20,7 @@ public class PaymentTargets {
     public static Target ACCEPT_BUTTON = Target.the("Accept button ").located(By.xpath("//button[@title='ACEPTAR']"));
     public static Target WAITING = Target.the("Terms ").located(By.xpath("//h3[normalize-space()='procesando pago...']"));
 
+    public static Target CODE_CONFIRMATION = Target.the("Code confirmation").located(By.xpath("//h4[normalize-space()='código de confirmación']"));
+    public static Target FINISH_BUY = Target.the("Finish flow").located(By.xpath("//button[@title='FINALIZAR']"));
+
 }
