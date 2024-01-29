@@ -7,19 +7,27 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.waits.WaitUntil;
-
+import java.util.List;
+import java.util.Map;
 import static com.andrest.targets.AlertTargets.*;
 import static com.andrest.targets.RegisterTargets.*;
-import static com.andrest.utils.Constants.*;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class RegisterForm implements Task {
-    public static RegisterForm fill() {
-        return Instrumented.instanceOf(RegisterForm.class).newInstance();
+
+    List<Map<String, String>> dataTable;
+
+    public RegisterForm(List<Map<String, String>> dataTable) {
+        this.dataTable = dataTable;
+    }
+
+    public static RegisterForm fill(List<Map<String, String>> dataTable) {
+        return Instrumented.instanceOf(RegisterForm.class).withProperties(dataTable);
     }
     @Override
     @Step("{0} Fill register form")
     public <T extends Actor> void performAs(T actor) {
+
         actor.attemptsTo(
                 WaitUntil.the(REGISTER_BUTTON, isVisible()),
                 Click.on(REGISTER_BUTTON),
@@ -29,17 +37,17 @@ public class RegisterForm implements Task {
 
         actor.attemptsTo(
                 WaitUntil.the(NAME_INPUT, isVisible()).forNoMoreThan(5).seconds(),
-                Enter.theValue(NAME.getValue()).into(NAME_INPUT),
-                Enter.theValue(LAST_NAME.getValue()).into(LAST_NAME_INPUT),
+                Enter.theValue(dataTable.get(0).get("firstName")).into(NAME_INPUT),
+                Enter.theValue(dataTable.get(0).get("lastName")).into(LAST_NAME_INPUT),
                 Click.on(GENDER_INPUT),
                 Click.on(GENDER_MEN_INPUT),
-                Enter.theValue(DOCUMENT_NUMBER_NEW_USER.getValue()).into(DOCUMENT_NUMBER_INPUT),
-                Enter.theValue(PHONE_NUMBER_NEW_USER.getValue()).into(PHONE_NUMBER_INPUT),
-                Enter.theValue(ADDRESS.getValue()).into(ADDRESS_INPUT),
-                Enter.theValue(EMAIL_NEW_USER.getValue()).into(CREATE_EMAIL_INPUT),
-                Enter.theValue(EMAIL_NEW_USER.getValue()).into(CONFIRM_EMAIL_INPUT),
-                Enter.theValue(PASSWORD.getValue()).into(CREATE_PASSWORD_INPUT),
-                Enter.theValue(PASSWORD.getValue()).into(CONFIRM_PASSWORD_INPUT),
+                Enter.theValue(dataTable.get(0).get("document")).into(DOCUMENT_NUMBER_INPUT),
+                Enter.theValue(dataTable.get(0).get("phone")).into(PHONE_NUMBER_INPUT),
+                Enter.theValue(dataTable.get(0).get("address")).into(ADDRESS_INPUT),
+                Enter.theValue(dataTable.get(0).get("email")).into(CREATE_EMAIL_INPUT),
+                Enter.theValue(dataTable.get(0).get("email")).into(CONFIRM_EMAIL_INPUT),
+                Enter.theValue(dataTable.get(0).get("password")).into(CREATE_PASSWORD_INPUT),
+                Enter.theValue(dataTable.get(0).get("password")).into(CONFIRM_PASSWORD_INPUT),
                 Click.on(SELECT_CITY_INPUT),
                 Click.on(SELECT_CITY),
                 Click.on(SELECT_THEATER),

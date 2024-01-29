@@ -9,7 +9,8 @@ import net.serenitybdd.annotations.Step;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
-
+import java.util.List;
+import java.util.Map;
 import static com.andrest.targets.AlertTargets.*;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
@@ -34,17 +35,17 @@ public class RegisterStepDefinition {
         );
     }
 
-    @When("create a new user")
-    public void createNewUser() {
-        createNewAccount();
+    @When("create a new user with de following details:")
+    public void createNewUser(List<Map<String, String>> dataTable) {
+        createNewAccount(dataTable);
     }
 
 
 
     @Step("create account")
-    private void createNewAccount(){
+    private void createNewAccount(List<Map<String, String>> dataTable){
         theActorInTheSpotlight().attemptsTo(
-                RegisterForm.fill()
+                RegisterForm.fill(dataTable)
         );
     }
 
