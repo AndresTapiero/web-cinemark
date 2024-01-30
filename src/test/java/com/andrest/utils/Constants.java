@@ -1,16 +1,7 @@
 package com.andrest.utils;
 
 public enum Constants {
-
-    NAME("Andres"),
-    LAST_NAME("Suarez"),
-    EMAIL("andressurez2@yopmail.com"),
-    DOCUMENT_NUMBER("1012432338"),
-
-    EMAIL_NEW_USER("andresMart3@yopmail.com"),
-    DOCUMENT_NUMBER_NEW_USER("1012532331"),
-    PHONE_NUMBER_NEW_USER("3156523422"),
-    PHONE_NUMBER("3154323422"),
+    BOGOTA("andressurez2@yopmail.com"),
     ADDRESS("Calle 38 # 21-130"),
     PASSWORD("TestCine123."),
     CARD_NAME("APPROVED"),

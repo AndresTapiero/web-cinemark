@@ -4,32 +4,36 @@ import com.andrest.tasks.LoginForm;
 import com.andrest.tasks.PaymentForm;
 import com.andrest.tasks.SelectComb;
 import com.andrest.tasks.SelectMovie;
+import com.andrest.utils.DropDownOption;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
+import java.util.List;
+import java.util.Map;
+
 import static com.andrest.targets.BillboardTargets.*;
 import static com.andrest.targets.PaymentTargets.*;
+import static com.andrest.utils.CustomTargets.withQuotaValue;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 
 public class SearchMovieStepsDefinitions {
 
-    @And("log in with correct credentials")
-    public void login() {
+    @And("log in with correct credentials:")
+    public void login(List<Map<String, String>> loginTable) {
         theActorInTheSpotlight().attemptsTo(
-                LoginForm.fill()
+                LoginForm.fill(loginTable)
         );
     }
 
-    @And("select city")
-    public void selectCity() {
+    @And("select city {string}")
+    public void selectCity(String city) {
         theActorInTheSpotlight().attemptsTo(
-                Click.on(DROP_CITY),
-                Click.on(SELECT_CITY)
+                DropDownOption.from(withQuotaValue(city), DROP_CITY)
         );
     }
 
@@ -48,10 +52,10 @@ public class SearchMovieStepsDefinitions {
         );
     }
 
-    @And("add the payment method")
-    public void addPaymentMethod() {
+    @And("add the payment method with the following data:")
+    public void addPaymentMethod(List<Map<String, String>> payTable) {
         theActorInTheSpotlight().attemptsTo(
-                PaymentForm.fill()
+                PaymentForm.fill(payTable)
         );
     }
 

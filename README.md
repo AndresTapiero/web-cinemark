@@ -55,6 +55,9 @@ The project structure is organized as follows:
         |           |   |-- SelectMovie.java
         |           |-- utils
         |               |-- Constants.java
+        |               |-- CustomTargets.java
+        |               |-- DropDownOption.java
+        |               |-- EnterDataAfterClick.java
         |-- resources
             |-- features
             |   |-- create_booking.feature

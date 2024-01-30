@@ -24,7 +24,7 @@ sourceCompatibility = 18
 targetCompatibility = 18
 
 ext {
-    serenity_version = '4.0.15'
+    serenity_version = '4.0.30'
     junit_platform_launcher_version="1.10.0"
     cucumber_junit_platform_engine_version="7.14.0"
     junit_platform_suite_version="1.10.0"

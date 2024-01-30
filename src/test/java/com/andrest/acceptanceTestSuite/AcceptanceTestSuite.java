@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features/",
         glue = "com.andrest",
-        tags = "@smoke"
+        tags = "@login"
 )
 public class AcceptanceTestSuite {
 }

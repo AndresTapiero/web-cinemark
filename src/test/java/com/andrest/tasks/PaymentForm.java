@@ -1,23 +1,33 @@
 package com.andrest.tasks;
 
+import com.andrest.utils.DropDownOption;
+import com.andrest.utils.EnterDataAfterClick;
 import net.serenitybdd.annotations.Step;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
+
+import java.util.List;
+import java.util.Map;
 
 import static com.andrest.targets.PaymentTargets.*;
 import static com.andrest.targets.PaymentTargets.CVV;
 import static com.andrest.targets.SelectMovieTargets.CONTINUE_BUTTON;
 import static com.andrest.utils.Constants.*;
+import static com.andrest.utils.CustomTargets.withQuotaValue;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class PaymentForm implements Task {
-    public static PaymentForm fill() {
-        return Instrumented.instanceOf(PaymentForm.class).newInstance();
+
+    List<Map<String, String>> payTable;
+    public PaymentForm(List<Map<String, String>> payTable) {
+        this.payTable = payTable;
+    }
+    public static PaymentForm fill(List<Map<String, String>> payTable) {
+        return Instrumented.instanceOf(PaymentForm.class).withProperties(payTable);
     }
 
     @Override
@@ -26,23 +36,17 @@ public class PaymentForm implements Task {
         actor.attemptsTo(
                 WaitUntil.the(ADD_CREDIT_CARD, isVisible()).forNoMoreThan(30).seconds(),
                 Click.on(ADD_CREDIT_CARD),
-                Click.on(CARD_NUMBER_INPUT),
-                Enter.theValue(CARD_NUMBER.getValue()).into(CARD_NUMBER_INPUT),
-                Click.on(CARD_NAME_INPUT),
-                Enter.theValue(CARD_NAME.getValue()).into(CARD_NAME_INPUT),
-
-                //Año
+                EnterDataAfterClick.input(payTable.get(0).get("cardNumber"), CARD_NUMBER_INPUT),
+                EnterDataAfterClick.input(payTable.get(0).get("cardName"), CARD_NAME_INPUT),
+                //Year
                 Click.on(CARD_EXPIRATION_INPUT),
                 WaitUntil.the(SELECT_YEAR, isVisible()).forNoMoreThan(10).seconds(),
                 Click.on(SELECT_YEAR),
                 Click.on(YEAR),
                 Click.on(MONTH),
-
-
-
-                Enter.theValue(CARD_CVV.getValue()).into(CVV),
-                Click.on(QUOTAS_INPUT),
-                Click.on(QUOTA),
+                //cvv
+                EnterDataAfterClick.input(payTable.get(0).get("cardCvv"), CVV),
+                DropDownOption.from(withQuotaValue(payTable.get(0).get("cardQuotas")), QUOTAS_INPUT),
                 Click.on(TERMS_BUY),
                 Click.on(CONTINUE_BUTTON)
         );
