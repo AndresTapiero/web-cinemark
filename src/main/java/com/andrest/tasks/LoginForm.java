@@ -10,7 +10,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import java.util.List;
 import java.util.Map;
 
-import static com.andrest.targets.LoginTargets.*;
+import static com.andrest.userinterfaces.LoginTargets.*;
 
 public class LoginForm implements Task {
 

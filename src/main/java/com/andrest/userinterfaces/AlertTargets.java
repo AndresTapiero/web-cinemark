@@ -1,4 +1,4 @@
-package com.andrest.targets;
+package com.andrest.userinterfaces;
 
 import io.appium.java_client.AppiumBy;
 import net.serenitybdd.screenplay.targets.Target;

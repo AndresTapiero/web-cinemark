@@ -13,9 +13,9 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import java.util.List;
 import java.util.Map;
 
-import static com.andrest.targets.PaymentTargets.*;
-import static com.andrest.targets.PaymentTargets.CVV;
-import static com.andrest.targets.SelectMovieTargets.CONTINUE_BUTTON;
+import static com.andrest.userinterfaces.PaymentTargets.*;
+import static com.andrest.userinterfaces.PaymentTargets.CVV;
+import static com.andrest.userinterfaces.SelectMovieTargets.CONTINUE_BUTTON;
 import static com.andrest.utils.CustomTargets.withValue;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 

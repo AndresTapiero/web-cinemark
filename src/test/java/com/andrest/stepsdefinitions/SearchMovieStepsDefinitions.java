@@ -1,4 +1,4 @@
-package com.andrest.steps;
+package com.andrest.stepsdefinitions;
 
 import com.andrest.tasks.LoginForm;
 import com.andrest.tasks.PaymentForm;
@@ -14,8 +14,8 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import java.util.List;
 import java.util.Map;
 
-import static com.andrest.targets.BillboardTargets.*;
-import static com.andrest.targets.PaymentTargets.*;
+import static com.andrest.userinterfaces.BillboardTargets.*;
+import static com.andrest.userinterfaces.PaymentTargets.*;
 import static com.andrest.utils.CustomTargets.withValue;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;

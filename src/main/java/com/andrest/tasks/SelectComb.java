@@ -6,8 +6,8 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static com.andrest.targets.SelectMovieTargets.*;
-import static com.andrest.targets.SelectMovieTargets.CONTINUE_BUTTON;
+import static com.andrest.userinterfaces.SelectMovieTargets.*;
+import static com.andrest.userinterfaces.SelectMovieTargets.CONTINUE_BUTTON;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class SelectComb implements Task {

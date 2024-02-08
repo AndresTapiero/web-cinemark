@@ -1,16 +1,15 @@
 package com.andrest.tasks;
 
-import com.andrest.tasks.searchMovie.EnsureMovieVisible;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static com.andrest.targets.AlertTargets.*;
-import static com.andrest.targets.AlertTargets.CONFIRM_BUTTON;
-import static com.andrest.targets.BillboardTargets.*;
-import static com.andrest.targets.SelectMovieTargets.*;
+import static com.andrest.userinterfaces.AlertTargets.*;
+import static com.andrest.userinterfaces.AlertTargets.CONFIRM_BUTTON;
+import static com.andrest.userinterfaces.BillboardTargets.*;
+import static com.andrest.userinterfaces.SelectMovieTargets.*;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class SelectMovie implements Task {

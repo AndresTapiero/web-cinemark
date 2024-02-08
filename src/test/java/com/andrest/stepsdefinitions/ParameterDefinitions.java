@@ -1,4 +1,4 @@
-package com.andrest.steps;
+package com.andrest.stepsdefinitions;
 
 import io.cucumber.java.Before;
 import io.cucumber.java.ParameterType;

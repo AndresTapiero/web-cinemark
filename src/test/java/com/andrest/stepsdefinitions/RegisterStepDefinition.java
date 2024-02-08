@@ -1,4 +1,4 @@
-package com.andrest.steps;
+package com.andrest.stepsdefinitions;
 
 import com.andrest.tasks.RegisterForm;
 import io.cucumber.java.en.Given;
@@ -11,7 +11,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import java.util.List;
 import java.util.Map;
-import static com.andrest.targets.AlertTargets.*;
+import static com.andrest.userinterfaces.AlertTargets.*;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 

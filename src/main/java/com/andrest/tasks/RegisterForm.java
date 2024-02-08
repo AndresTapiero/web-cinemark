@@ -9,8 +9,8 @@ import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import java.util.List;
 import java.util.Map;
-import static com.andrest.targets.AlertTargets.*;
-import static com.andrest.targets.RegisterTargets.*;
+import static com.andrest.userinterfaces.AlertTargets.*;
+import static com.andrest.userinterfaces.RegisterTargets.*;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class RegisterForm implements Task {

@@ -27,44 +27,47 @@ The project structure is organized as follows:
 |-- gradlew.bat
 |-- serenity.properties
 |-- src
-    -- test
+    -- main
         |-- java
         |   -- com
         |       -- andrest
-        |           |-- acceptanceTestSuite
-        |           |   |-- AcceptanceTestSuite.java
+        |           |-- interactions
+        |           |   |-- DropDownOption.java
+        |           |   |-- EnterDataAfterClick.java
         |           |-- navigation
         |           |   |-- CinemarkGoHomePage.java
         |           |   |-- NavigateTo.java
-        |           |-- steps
-        |           |   |-- ParameterDefinitions.java
-        |           |   |-- RegisterStepDefinitions.java
-        |           |   |-- SearchMovieStepDefinitions.java
-        |           |-- targets
-        |           |   |-- AlertTargets.java
-        |           |   |-- BillboardTargets.java
-        |           |   |-- LoginTargets.java
-        |           |   |-- PaymentTargets.java
-        |           |   |-- RegisterTargets.java
-        |           |   |-- SelectMovieTargets.java
         |           |-- tasks
         |           |   |-- LoginForm.java
         |           |   |-- PaymentForm.java
         |           |   |-- RegisterForm.java
         |           |   |-- SelectComb.java
         |           |   |-- SelectMovie.java
+        |           |-- userinterfaces
+        |           |   |-- AlertTargets.java
+        |           |   |-- BillboardTargets.java
+        |           |   |-- LoginTargets.java
+        |           |   |-- PaymentTargets.java
+        |           |   |-- RegisterTargets.java
+        |           |   |-- SelectMovieTargets.java
         |           |-- utils
         |               |-- Constants.java
         |               |-- CustomTargets.java
-        |               |-- DropDownOption.java
-        |               |-- EnterDataAfterClick.java
+    -- test
+        |-- java
+        |   -- com
+        |       -- andrest
+        |           |-- runners
+        |           |   |-- AcceptanceTestSuite.java
+        |           |-- stepsdefinitions
+        |           |   |-- ParameterDefinitions.java
+        |           |   |-- RegisterStepDefinitions.java
+        |           |   |-- SearchMovieStepDefinitions.java
         |-- resources
             |-- features
             |   |-- create_booking.feature
             |   |-- create_user.feature
             |-- serenity.conf
-            
-
 ```
 
 ## Setup and Running

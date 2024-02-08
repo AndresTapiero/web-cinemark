@@ -1,4 +1,4 @@
-package com.andrest.targets;
+package com.andrest.userinterfaces;
 
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
