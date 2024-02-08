@@ -1,7 +1,7 @@
 package com.andrest.tasks;
 
-import com.andrest.utils.DropDownOption;
-import com.andrest.utils.EnterDataAfterClick;
+import com.andrest.interactions.DropDownOption;
+import com.andrest.interactions.EnterDataAfterClick;
 import net.serenitybdd.annotations.Step;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
@@ -16,8 +16,7 @@ import java.util.Map;
 import static com.andrest.targets.PaymentTargets.*;
 import static com.andrest.targets.PaymentTargets.CVV;
 import static com.andrest.targets.SelectMovieTargets.CONTINUE_BUTTON;
-import static com.andrest.utils.Constants.*;
-import static com.andrest.utils.CustomTargets.withQuotaValue;
+import static com.andrest.utils.CustomTargets.withValue;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class PaymentForm implements Task {
@@ -46,7 +45,7 @@ public class PaymentForm implements Task {
                 Click.on(MONTH),
                 //cvv
                 EnterDataAfterClick.input(payTable.get(0).get("cardCvv"), CVV),
-                DropDownOption.from(withQuotaValue(payTable.get(0).get("cardQuotas")), QUOTAS_INPUT),
+                DropDownOption.from(withValue(payTable.get(0).get("cardQuotas")), QUOTAS_INPUT),
                 Click.on(TERMS_BUY),
                 Click.on(CONTINUE_BUTTON)
         );

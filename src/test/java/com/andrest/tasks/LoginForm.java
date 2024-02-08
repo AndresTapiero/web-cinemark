@@ -1,6 +1,6 @@
 package com.andrest.tasks;
 
-import com.andrest.utils.EnterDataAfterClick;
+import com.andrest.interactions.EnterDataAfterClick;
 import net.serenitybdd.annotations.Step;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;

@@ -4,7 +4,7 @@ import com.andrest.tasks.LoginForm;
 import com.andrest.tasks.PaymentForm;
 import com.andrest.tasks.SelectComb;
 import com.andrest.tasks.SelectMovie;
-import com.andrest.utils.DropDownOption;
+import com.andrest.interactions.DropDownOption;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -16,7 +16,7 @@ import java.util.Map;
 
 import static com.andrest.targets.BillboardTargets.*;
 import static com.andrest.targets.PaymentTargets.*;
-import static com.andrest.utils.CustomTargets.withQuotaValue;
+import static com.andrest.utils.CustomTargets.withValue;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
@@ -33,7 +33,7 @@ public class SearchMovieStepsDefinitions {
     @And("select city {string}")
     public void selectCity(String city) {
         theActorInTheSpotlight().attemptsTo(
-                DropDownOption.from(withQuotaValue(city), DROP_CITY)
+                DropDownOption.from(withValue(city), DROP_CITY)
         );
     }
 

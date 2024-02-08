@@ -18,7 +18,7 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 public class RegisterStepDefinition {
 
     @Given("{actor} is on the main page")
-    public void searchMovie(Actor actor) {
+    public void navigateToMainPage(Actor actor) {
         actor.wasAbleTo(NavigateTo.theSearchHomePage());
         closeBannerView(actor);
     }
@@ -27,9 +27,7 @@ public class RegisterStepDefinition {
     @Step("close location view")
     private void closeBannerView(Actor actor) {
         actor.attemptsTo(
-                WaitUntil.the(CLOSE_REDEBAN_BUTTON, isVisible()).forNoMoreThan(10).seconds()
-        );
-        actor.attemptsTo(
+                WaitUntil.the(CLOSE_REDEBAN_BUTTON, isVisible()).forNoMoreThan(10).seconds(),
                 Click.on(CLOSE_REDEBAN_BUTTON),
                 WaitUntil.the(BILLBOARD_TITLE, isVisible())
         );

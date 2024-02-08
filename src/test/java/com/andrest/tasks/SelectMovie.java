@@ -1,5 +1,6 @@
 package com.andrest.tasks;
 
+import com.andrest.tasks.searchMovie.EnsureMovieVisible;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;

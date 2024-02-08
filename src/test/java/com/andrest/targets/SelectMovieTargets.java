@@ -15,12 +15,15 @@ public class SelectMovieTargets {
     public static Target SEAT_1 = Target.the("Seat 1").located(By.xpath("//li[normalize-space()='1']"));
     public static Target CONTINUE_BUTTON = Target.the("Continue button").located(By.xpath("//button[@title='continuar']"));
     public static Target ROOM = Target.the("Room").located(By.xpath("//div[@class='jsx-30724968 room__seats-container']"));
-    public static Target SEAT_SELECTED = Target.the("Room").located(By.xpath("//*[@id=\"map\"]/div/div[291]/button"));
+    public static Target SEAT_SELECTED = Target.the("Room").located(By.xpath("//*[@id=\"map\"]/div/div[331]/button"));
 
     //CONFITERIA
     public static Target CONFECTIONERY = Target.the("Confectionery").located(By.xpath("//h1[normalize-space()='CONFITERÍA REGULAR']"));
     public static Target MY_COMB_MORE = Target.the("My comb").located(By.xpath("(//button[@type='button'])[5]"));
     public static Target TOTAL_TITLE = Target.the("Total title").located(By.xpath("//div[normalize-space()='total']"));
+    public static Target MOVIE_IN_CAROUSEL = Target.the("Total title").located(By.xpath("//div[@class='jsx-2391151467 container-carousel Box']//div[@class='slick-slide slick-active slick-current']"));
+    public static Target BUTTON_NEXT = Target.the("Total title").located(By.xpath("(//*[name()='svg'])[64]"));
+    //public static Target MOVIE_IN_CAROUSEL = Target.the("Total title").located(By.xpath("(//div[@class='slick-track'])[1]"));
 
 
 

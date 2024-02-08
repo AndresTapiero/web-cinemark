@@ -1,4 +1,4 @@
-package com.andrest.utils;
+package com.andrest.interactions;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;

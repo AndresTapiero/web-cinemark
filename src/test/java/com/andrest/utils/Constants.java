@@ -1,6 +1,8 @@
 package com.andrest.utils;
 
 public enum Constants {
+
+    BILLBOARD_PREMIERES_BOGOTA("estrenos / cartelera en Bogota"),
     BOGOTA("andressurez2@yopmail.com"),
     ADDRESS("Calle 38 # 21-130"),
     PASSWORD("TestCine123."),
